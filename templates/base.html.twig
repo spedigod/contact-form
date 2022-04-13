@@ -20,9 +20,12 @@
         {% endblock %}
     </head>
     <body style="height: 80vh">
+        {# Changing header depending on the page #}
         <header class="d-flex justify-content-center mt-5" style="20vh">
             {%block head %}{% endblock %}
         </header>
+
+        {# Body part #}
         {% block body %}{% endblock %}
     </body>
 </html>

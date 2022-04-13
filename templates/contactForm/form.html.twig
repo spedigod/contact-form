@@ -1,9 +1,11 @@
 {% extends "base.html.twig" %}
 
+{# Header when form succeded #}
 {% block head %}
     <h1>Vedd fel velünk a kapcsolatot!</h1>
 {% endblock %}
 
+{# Body part of /contact page #}
 {% block body %}
     <div class="container d-flex align-items-end justify-content-center p-5" style="height: 55vh">
         {{ form_start(contact_form) }}

@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
 
+/* Form validator */
 class ContactFormController extends AbstractController {
 
     #[Route('/contact')]
@@ -21,11 +22,13 @@ class ContactFormController extends AbstractController {
         $form = $this->createForm(ContactFormType::class, $contactForm);
         $form->handleRequest($request);
 
+        /* Validator */
         if ($form->isSubmitted() && $form->isValid()) {
             
             $entityManager->persist($contactForm);
             $entityManager->flush();
 
+            /* Render this on success */
             return new Response($twig->render('contactForm/success.html.twig'));
         }
 

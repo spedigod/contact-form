@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ContactFormType extends AbstractType
 {
+    /* Form with different fields */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder

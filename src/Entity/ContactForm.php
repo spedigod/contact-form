@@ -20,7 +20,7 @@ class ContactForm
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank(message: 'Hiba! Kérjük töltsd ki az Email mezőt!')]
-    #[Assert\Email]
+    #[Assert\Email] /* Edited email error message in "\vendor\symfony\validator\Constraints\Email.php" */
     private $email;
 
     #[ORM\Column(type: 'text')]
