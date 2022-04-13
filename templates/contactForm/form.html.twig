@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block head %}
+    <h1>Vedd fel velünk a kapcsolatot!</h1>
+{% endblock %}
+
+{% block body %}
+    <div class="container d-flex align-items-end justify-content-center p-5" style="height: 55vh">
+        {{ form_start(contact_form) }}
+
+        {# Displays errors #}
+        <div class="alert-danger custom" role="alert">
+            {{ form_errors(contact_form) }}
+        </div>
+
+        <div class="container mt-5">
+            {# row for Username and Email fields #}
+            <div class="row mb-4">
+                <div class="col">
+                    {{ form_label(contact_form.username, 'Felhasználónév') }}
+
+                    {{ form_widget(contact_form.username) }}
+                </div>
+                <div class="col">
+                    {{ form_label(contact_form.email, 'E-mail cím') }}
+
+                    {{ form_widget(contact_form.email) }}
+                </div>
+            </div>
+
+            {# row for Message field #}
+            <div class="col">
+                {{ form_label(contact_form.message, 'Üzenet') }}
+
+                {{ form_widget(contact_form.message) }}
+                {{ form_help(contact_form.message) }}
+            </div>
+
+            {# row for Submit button #}
+            <div class="mt-4">
+                {{ form_row(contact_form.submit)}}
+            </div>
+        </div>
+
+        {{ form_end(contact_form) }}
+    </div>
+{% endblock %}
